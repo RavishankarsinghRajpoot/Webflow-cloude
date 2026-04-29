@@ -9,7 +9,8 @@ import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
 const projectRoot = path.dirname(fileURLToPath(import.meta.url));
 
 const nextConfig: NextConfig = {
-  // Production (Webflow Cloud) serves this app under /app — local dev uses / so localhost:3000 works.
+  // Webflow Cloud mounts this app at /app in production.
+  // Keep local dev on / so http://localhost:3000 works.
   basePath: process.env.NODE_ENV === "development" ? "" : "/app",
   // Avoid inferring workspace root from a parent folder lockfile (e.g. ~/package-lock.json).
   outputFileTracingRoot: projectRoot,

@@ -11,7 +11,8 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
-  { ignorePatterns: ["**/devlink/**"] },
+  // Flat config uses `ignores` instead of `ignorePatterns`.
+  { ignores: ["**/devlink/**"] },
 ];
 
 export default eslintConfig;

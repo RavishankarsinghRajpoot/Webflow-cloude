@@ -1,5 +1,6 @@
 "use client";
 
+import type { JSX as ReactJSX } from "react";
 import { CSSProperties, ReactNode } from "react";
 
 type CommonProps = {
@@ -9,7 +10,7 @@ type CommonProps = {
 };
 
 type BlockProps = CommonProps & {
-  tag?: keyof JSX.IntrinsicElements;
+  tag?: keyof ReactJSX.IntrinsicElements;
 };
 
 type SectionProps = CommonProps & {
