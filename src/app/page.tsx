@@ -1,64 +1,72 @@
 "use client";
 
 import { Section, Block, Link } from "@/devlink/_Builtin";
+import SiteFooter from "@/components/site-footer";
+import SiteHeader from "@/components/site-header";
 
 export default function Home() {
   return (
-    <Section
-      tag="section"
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <Block tag="div" className="container">
-        <Block
-          tag="div"
-          className="hero-split"
-          style={{
-            textAlign: "center",
-            maxWidth: "600px",
-            margin: "0 auto",
-          }}
-        >
-          <h1
-            className="margin-bottom-24px"
+    <>
+      <SiteHeader />
+      <Section
+        tag="section"
+        style={{
+          minHeight: "70vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: "2rem 1rem",
+        }}
+      >
+        <Block tag="div" className="container">
+          <Block
+            tag="div"
+            className="hero-split"
             style={{
-              fontSize: "2.5rem",
-              fontWeight: 700,
-              background: "linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
+              textAlign: "center",
+              maxWidth: "760px",
+              margin: "0 auto",
             }}
           >
-            Welcome to Webflow Cloud
-          </h1>
-          <Block tag="p" className="margin-bottom-24px">
-            This is a simple test using Basic components with enhanced styling.
-          </Block>
-          <div style={{ marginTop: "12px" }}>
-            <Link
-              button={true}
-              options={{
-                href: "https://developers.webflow.com/webflow-cloud/getting-started",
-              }}
-              className="button-primary"
+            <p className="af-kicker">The bank of the future.</p>
+            <h1
+              className="margin-bottom-24px"
               style={{
-                borderRadius: "4px",
-                background: "#146ef5",
-                color: "#ffffff",
-                boxShadow:
-                  "0px 0.5px 1px rgba(0, 0, 0, 0.25), inset 0px 29px 23px -16px rgba(255, 255, 255, 0.04), inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.2)",
+                fontSize: "2.5rem",
+                fontWeight: 700,
+                color: "#0f172a",
               }}
             >
-              Get Started
-            </Link>
-          </div>
+              Embrace a new era of financial management.
+            </h1>
+            <Block tag="p" className="margin-bottom-24px">
+              Smart budgeting, seamless integration, and personalized insights
+              in one clean dashboard.
+            </Block>
+            <div style={{ marginTop: "12px", display: "flex", gap: "12px", justifyContent: "center" }}>
+              <Link
+                button={true}
+                options={{
+                  href: "https://developers.webflow.com/webflow-cloud/getting-started",
+                }}
+                className="button-primary"
+                style={{
+                  borderRadius: "8px",
+                  background: "#146ef5",
+                  color: "#ffffff",
+                  padding: "0.75rem 1.2rem",
+                }}
+              >
+                Get started
+              </Link>
+              <a href="#" className="af-secondary-btn">
+                Learn more
+              </a>
+            </div>
+          </Block>
         </Block>
-      </Block>
-    </Section>
+      </Section>
+      <SiteFooter />
+    </>
   );
 }
