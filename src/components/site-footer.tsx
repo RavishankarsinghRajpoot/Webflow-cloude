@@ -42,7 +42,7 @@ export default function SiteFooter() {
                   console.log("Form submitted");
                 }}
               >
-                <label className="w-checkbox">
+                <label className="w-checkbox" htmlFor="checkbox">
                   <div className="w-checkbox-input w-checkbox-input--inputType-custom badge"></div>
 
                   <input
@@ -52,7 +52,7 @@ export default function SiteFooter() {
                     style={{ opacity: 0, position: "absolute", zIndex: -1 }}
                   />
 
-                  <span className="w-form-label" htmlFor="checkbox">
+                  <span className="w-form-label">
                     Checkbox
                   </span>
                 </label>
