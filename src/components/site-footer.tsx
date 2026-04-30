@@ -27,34 +27,65 @@ export default function SiteFooter() {
         <div className="w-layout-grid footer-top-wrapper">
           <div className="footer-left-wrapper">
             <a href="#" className="logo-link w-nav-brand">
-              <img
-                src="https://cdn.prod.website-files.com/69eb670ad1c4f1d2d8dec6ed/69eb670cd1c4f1d2d8dec78a_AstralFund%20Logo.svg"
-                loading="lazy"
-                alt="AstralFund logo"
-              />
+              <img src="https://cdn.prod.website-files.com/69eb670ad1c4f1d2d8dec6ed/69eb670cd1c4f1d2d8dec78a_AstralFund%20Logo.svg" loading="lazy" alt="AstralFund logo"/>
             </a>
             <div className="text-medium">
               Join our newsletter to stay up to date on features and releases.
             </div>
-            {/* <div className="footer-form-blog w-form">
-              <form id="email-form" name="email-form" data-name="Email Form" method="get" className="foot-form" data-wf-page-id="69eb670cd1c4f1d2d8dec75c" data-wf-element-id="285042f7-d554-dc7f-102c-aa10d6a2d2c3" aria-label="Email Form">
+            <div className="footer-form-blog w-form">
+              <form
+                id="email-form"
+                name="email-form"
+                className="foot-form"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  console.log("Form submitted");
+                }}
+              >
                 <label className="w-checkbox">
                   <div className="w-checkbox-input w-checkbox-input--inputType-custom badge"></div>
-                  <input type="checkbox" id="checkbox" name="checkbox" data-name="Checkbox" style="opacity:0;position:absolute;z-index:-1">
-                  <span className="w-form-label" for="checkbox">Checkbox</span>
+
+                  <input
+                    type="checkbox"
+                    id="checkbox"
+                    name="checkbox"
+                    style={{ opacity: 0, position: "absolute", zIndex: -1 }}
+                  />
+
+                  <span className="w-form-label" htmlFor="checkbox">
+                    Checkbox
+                  </span>
                 </label>
-                <input className="form-input w-input" maxlength="256" name="Email" data-name="Email" placeholder="Enter your email" type="email" id="Email-2" required="">
-                <input type="submit" data-wait="Please wait..." className="button w-button" value="Subscribe">
+
+                <input
+                  className="form-input w-input"
+                  maxLength={256}
+                  name="Email"
+                  placeholder="Enter your email"
+                  type="email"
+                  required
+                />
+
+                <input
+                  type="submit"
+                  className="button w-button"
+                  value="Subscribe"
+                />
               </form>
-              <div className="text-small">We care about your data. View our 
+
+              <div className="text-small">
+                We care about your data. View our{" "}
                 <a href="#" className="text-link">Privacy Policy</a>.
               </div>
-              <div className="success-message w-form-done" tabindex="-1" role="region" aria-label="Email Form success"><div>Thank you! Your submission has been received!</div></div>
-                <div className="error-message w-form-fail" tabindex="-1" role="region" aria-label="Email Form failure">
-                  <div>Oops! Something went wrong while submitting the form.</div>
-                </div>
+
+              <div className="success-message w-form-done" tabIndex={-1} role="region">
+                <div>Thank you! Your submission has been received!</div>
               </div>
-            </div> */}
+
+              <div className="error-message w-form-fail" tabIndex={-1} role="region">
+                <div>Oops! Something went wrong while submitting the form.</div>
+              </div>
+            </div>
           </div>
 
           <div className="w-layout-grid footer-menu-wrapper">
