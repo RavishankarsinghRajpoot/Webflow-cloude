@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { basePath } from "@/lib/basePath";
 
 const navItems = ["Features", "Products", "Resources", "Contact"];
 
@@ -7,7 +8,7 @@ export default function SiteHeader() {
     <header className="af-header">
       <div className="af-shell af-header-row">
         <Link href="/" className="af-brand" aria-label="AstralFund home">
-          <img src="/AstralFund-Logo.svg" alt="AstralFund" className="af-logo" />
+          <img src={`${basePath}/AstralFund-Logo.svg`} alt="AstralFund" className="af-logo" />
         </Link>
         <div className="af-header-nav-main">
           <nav aria-label="Primary">
