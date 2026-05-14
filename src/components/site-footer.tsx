@@ -1,12 +1,11 @@
-const footerColumns = {
-  Banking: ["Overview", "Features", "Solutions", "Pricing", "Releases"],
-  Resources: ["Blog", "Newsletter", "Events", "Tutorials", "Support"],
-  Social: ["X", "LinkedIn", "YouTube"],
-};
+"use client";
+
+import Link from "next/link";
+import { basePath } from "@/lib/basePath";
 
 export default function SiteFooter() {
   return (
-    <footer className="af-footer">
+    <footer className="af-footer" id="newsletter">
       <div className="af-shell">
         {/* <div className="af-footer-grid">
           {Object.entries(footerColumns).map(([title, links]) => (
@@ -26,9 +25,13 @@ export default function SiteFooter() {
         </div> */}
         <div className="w-layout-grid footer-top-wrapper">
           <div className="footer-left-wrapper">
-            <a href="#" className="logo-link w-nav-brand">
-              <img src="https://cdn.prod.website-files.com/69eb670ad1c4f1d2d8dec6ed/69eb670cd1c4f1d2d8dec78a_AstralFund%20Logo.svg" loading="lazy" alt="AstralFund logo"/>
-            </a>
+            <Link href="/" className="logo-link w-nav-brand">
+              <img
+                src={`${basePath}/AstralFund-Logo.svg`}
+                loading="lazy"
+                alt="AstralFund logo"
+              />
+            </Link>
             <div className="text-medium">
               Join our newsletter to stay up to date on features and releases.
             </div>
@@ -90,23 +93,41 @@ export default function SiteFooter() {
 
           <div className="w-layout-grid footer-menu-wrapper">
             <div className="footer-link-list">
-              <div className="footer-link-list-heading">Banking</div>
-              <a href="#" className="footer-link w-inline-block">Overview</a>
-              <a href="#" className="footer-link w-inline-block">Features</a>
-              <a href="#" className="footer-link w-inline-block">
-                Solutions <span className="badge">New</span>
-              </a>
-              <a href="#" className="footer-link w-inline-block">Pricing</a>
-              <a href="#" className="footer-link w-inline-block">Releases</a>
+              <div className="footer-link-list-heading">Shop</div>
+              <Link href="/" className="footer-link w-inline-block">
+                Home
+              </Link>
+              <Link href="/shop" className="footer-link w-inline-block">
+                All products
+              </Link>
+              <Link href="/shop?sort=bestsellers" className="footer-link w-inline-block">
+                Best sellers <span className="badge">Hot</span>
+              </Link>
+              <Link href="/cart" className="footer-link w-inline-block">
+                Cart
+              </Link>
+              <Link href="/checkout" className="footer-link w-inline-block">
+                Checkout
+              </Link>
             </div>
 
             <div className="footer-link-list">
-              <div className="footer-link-list-heading">Resources</div>
-              <a href="#" className="footer-link w-inline-block">Blog</a>
-              <a href="#" className="footer-link w-inline-block">Newsletter</a>
-              <a href="#" className="footer-link w-inline-block">Events</a>
-              <a href="#" className="footer-link w-inline-block">Tutorials</a>
-              <a href="#" className="footer-link w-inline-block">Support</a>
+              <div className="footer-link-list-heading">Categories</div>
+              <Link href="/shop?category=audio" className="footer-link w-inline-block">
+                Audio
+              </Link>
+              <Link href="/shop?category=wearables" className="footer-link w-inline-block">
+                Wearables
+              </Link>
+              <Link href="/shop?category=home" className="footer-link w-inline-block">
+                Home
+              </Link>
+              <Link href="/shop?category=office" className="footer-link w-inline-block">
+                Office
+              </Link>
+              <Link href="/shop?category=accessories" className="footer-link w-inline-block">
+                Accessories
+              </Link>
             </div>
 
             <div className="footer-link-list">
@@ -156,7 +177,7 @@ export default function SiteFooter() {
           </div>
         </div> */}
         <div className="footer-bottom-wrapper">
-          <div className="text-small text-color-light">© 2023 AstralFund&nbsp;Financial. All rights reserved.</div>
+          <div className="text-small text-color-light">© 2026 AstralFund&nbsp;Financial. All rights reserved.</div>
             <div className="w-layout-grid footer-legal-list">
               <a href="#" className="footer-legal-link">Terms</a>
               <a href="#" className="footer-legal-link">Privacy</a>
